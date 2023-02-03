@@ -4,8 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./dist/output.css" rel="stylesheet" />
+    <title>Ecommerce Home page</title>
   </head>
-  <body>
-    <div class="text-2xl text-center my-auto">Hello world</div>
+  <body class="mx-12 mt-6">
+    <!-- navbar -->
+    <nav class="flex justify-between items-center">
+      <div class="flex">
+        <!-- <a href="" class="font-bold pr-12">Sneakers</a> -->
+        <img src="./src/images/logo.svg" alt="" class="pr-12">
+        <div class="flex space-x-4">
+          <a href="" class="text-sm text-gray-500">Collections</a>
+          <a href="" class="text-sm text-gray-500">Men</a>
+          <a href="" class="text-sm text-gray-500">Women</a>
+          <a href="" class="text-sm text-gray-500">About</a>
+          <a href="" class="text-sm text-gray-500">Contact</a>
+        </div>
+      </div>
+      <div class="flex space-x-2 items-center">
+        <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
+        <img src="./src/images/image-avatar.png" alt="" class="h-8 w-8">
+      </div>
+    </nav>
+    <div class="pt-4"></div>
+    <hr class="border border-gray-300">
+    <!-- navbar -->
+
+    <!-- main content -->
+    <main class="px-6 pt-6">
+      <div class="flex items-center space-x-12">
+        <div class="flex flex-col w-1/2">
+          <img src="./src/images/image-product-1.jpg" alt="" class="rounded-lg">
+          <div class="flex justify-between space-x-2 pt-4 overflow-hidden">
+            <img src="./src/images/image-product-1-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16 border border-[#DA6E2E] bg-white/50">
+            <img src="./src/images/image-product-2-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16">
+            <img src="./src/images/image-product-3-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16">
+            <img src="./src/images/image-product-4-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16">
+          </div>
+        </div>
+        <div class="flex-1">
+          <h1 class="uppercase text-sm text-primary font-semibold">Sneaker company</h1>
+          <h2 class="font-bold text-lg">Fall Limited Edition Sneakers</h2>
+          <p class="text-gray-500 text-sm pt-4">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+            durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+
+            <div class="flex flex-col pt-4">
+              <div class="flex space-x-2 items-center">
+                <span class="font-bold text-lg">$125.00</span>
+                <span class="text-primary bg-[#FEEDDF] my-auto px-1 text-xs font-semibold rounded-md">50%</span>
+              </div>
+              <span class="text-gray-500 text-sm line-through">$250.00</span>
+            </div>
+
+            <div class="flex space-x-2 pt-6">
+              <div class="flex justify-between rounded-md bg-[#F7F8FD]">
+                <button class="text-primary font-bold px-2 py-1 rounded-l-md">-</button>
+                <input type="text" class="bg-[#F7F8FD] w-12 text-center" value="0">
+                <button class="text-primary font-bold px-2 py-1 rounded-r-md">+</button>
+              </div>
+              <button class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md">
+                <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
+                <span class="text-white">Add to cart</span>
+              </button>
+            </div>
+        </div>
+
+        
+        
+      </div>
+    </main>
   </body>
 </html>
