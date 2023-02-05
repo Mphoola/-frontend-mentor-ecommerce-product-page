@@ -6,13 +6,13 @@
     <link href="./dist/output.css" rel="stylesheet" />
     <title>Ecommerce Home page</title>
   </head>
-  <body class="mx-12 mt-6">
+  <body class="mx-4 md:mx-12 mt-6">
     <!-- navbar -->
     <nav class="flex justify-between items-center">
       <div class="flex">
-        <!-- <a href="" class="font-bold pr-12">Sneakers</a> -->
-        <img src="./src/images/logo.svg" alt="" class="pr-12">
-        <div class="flex space-x-4">
+        <img src="./src/images/icon-menu.svg" alt="" class="w-6 md:hidden">
+        <img src="./src/images/logo.svg" alt="" class="pl-4 md:pr-12">
+        <div class="hidden md:flex space-x-4">
           <a href="" class="text-sm text-gray-500">Collections</a>
           <a href="" class="text-sm text-gray-500">Men</a>
           <a href="" class="text-sm text-gray-500">Women</a>
@@ -20,9 +20,12 @@
           <a href="" class="text-sm text-gray-500">Contact</a>
         </div>
       </div>
-      <div class="flex space-x-2 items-center">
-        <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
-        <img src="./src/images/image-avatar.png" alt="" class="h-8 w-8">
+      <div class="flex space-x-3 items-center">
+        <div class="relative">
+          <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
+          <span class="absolute -top-2 -right-2 bg-primary text-white rounded-full text-xs font-semibold px-1">0</span>
+        </div>
+        <img src="./src/images/image-avatar.png" alt="" class="h-8 w-8 hover:border hover:border-primary hover:rounded-full">
       </div>
     </nav>
     <div class="pt-4"></div>
@@ -31,8 +34,8 @@
 
     <!-- main content -->
     <main class="px-6 pt-6">
-      <div class="flex items-center space-x-12">
-        <div class="flex flex-col w-1/2">
+      <div class="flex items-center flex-col md:flex-row space-x-24">
+        <div class="flex md:flex-col md:w-1/2">
           <img src="./src/images/image-product-1.jpg" alt="" class="rounded-lg">
           <div class="flex justify-between space-x-2 pt-4 overflow-hidden">
             <img src="./src/images/image-product-1-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16 border border-[#DA6E2E] bg-white/50">
@@ -41,7 +44,7 @@
             <img src="./src/images/image-product-4-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16">
           </div>
         </div>
-        <div class="flex-1">
+        <div class="md:flex-1">
           <h1 class="uppercase text-sm text-primary font-semibold">Sneaker company</h1>
           <h2 class="font-bold text-lg">Fall Limited Edition Sneakers</h2>
           <p class="text-gray-500 text-sm pt-4">These low-profile sneakers are your perfect casual wear companion. Featuring a 
@@ -61,7 +64,7 @@
                 <input type="text" class="bg-[#F7F8FD] w-12 text-center" value="0">
                 <button class="text-primary font-bold px-2 py-1 rounded-r-md">+</button>
               </div>
-              <button class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md">
+              <button class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md shadow-primary/50 shadow-lg">
                 <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
                 <span class="text-white">Add to cart</span>
               </button>
