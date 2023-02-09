@@ -8,7 +8,7 @@
 
     <title>Ecommerce Home page</title>
   </head>
-  <body class="mx-4 md:mx-12 mt-6">
+  <body class="mx-4 md:mx-12 mt-6 mb-6">
     <!-- navbar -->
     <nav class="flex justify-between items-center">
       <div class="flex">
@@ -35,15 +35,15 @@
     <!-- navbar -->
 
     <!-- main content -->
-    <main class="px-6 pt-6">
+    <main class="md:px-6 pt-6">
       <div class="flex items-center flex-col md:flex-row md:space-x-8 lg:space-x-24">
         <div class="flex md:flex-col md:w-1/2">
           <a href="./src/images/image-product-1.jpg" class="glightbox3" data-gallery="gallery1">
             <img src="./src/images/image-product-1.jpg" alt="" class="rounded-lg">
           </a>
           
-          <div class="flex justify-between space-x-2 pt-4 overflow-hidden">
-            <a href="./src/images/image-product-1.jpg" class="glightbox3" data-gallery="gallery1">
+          <div class="hidden md:flex justify-between space-x-2 pt-4 overflow-hidden">
+            <a href="./src/images/image-product-1.jpg" class="glightbox3" data-gallery="gallery1" >
               <img src="./src/images/image-product-1-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16 border border-[#DA6E2E] bg-white/50">
             </a>
             <a href="./src/images/image-product-2.jpg" class="glightbox3" data-gallery="gallery1">
@@ -58,24 +58,26 @@
             
           </div>
         </div>
-        <div class="md:flex-1">
+        <div class="mt-4 md:mt-0 md:flex-1">
           <h1 class="uppercase text-sm text-primary font-semibold">Sneaker company</h1>
           <h2 class="font-bold text-lg">Fall Limited Edition Sneakers</h2>
           <p class="text-gray-500 text-sm pt-4">These low-profile sneakers are your perfect casual wear companion. Featuring a 
             durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
 
-            <div class="flex flex-col pt-4">
+            <div class="flex md:flex-col items-center md:items-start justify-between pt-4">
               <div class="flex space-x-2 items-center">
                 <span class="font-bold text-lg">$125.00</span>
                 <span class="text-primary bg-[#FEEDDF] my-auto px-1 text-xs font-semibold rounded-md">50%</span>
               </div>
-              <span class="text-gray-500 text-sm line-through">$250.00</span>
+              <div>
+                <span class="text-gray-500 text-sm line-through">$250.00</span>
+              </div>
             </div>
 
-            <div class="flex space-x-2 pt-6">
+            <div class="flex flex-col md:flex-row md:space-x-2 pt-6 space-y-4 md:space-y-0">
               <div class="flex justify-between rounded-md bg-[#F7F8FD]">
                 <button class="text-primary font-bold px-2 py-1 rounded-l-md">-</button>
-                <input type="text" class="bg-[#F7F8FD] w-12 text-center  focus:outline-none focus:border-[#F7F8FD] focus:ring-1 focus:ring-[#F7F8FD]" value="0">
+                <input type="number" class="bg-[#F7F8FD] w-12 text-center  focus:outline-none focus:border-[#F7F8FD] focus:ring-1 focus:ring-[#F7F8FD]" value="0">
                 <button class="text-primary font-bold px-2 py-1 rounded-r-md">+</button>
               </div>
               <button class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md shadow-primary/50 shadow-lg">
@@ -97,9 +99,7 @@
         touchNavigation: true,
         loop: true,
         autoplayVideos: true,
-        onOpen: () => {
-          console.log('Lightbox opened')
-        },
+        
       });
 
     </script>
