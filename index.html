@@ -8,9 +8,9 @@
 
     <title>Ecommerce Home page</title>
   </head>
-  <body class="mx-4 md:mx-12 mt-6 mb-6 ">
+  <body class="md:mx-12 mt-6 mb-6 ">
     <!-- navbar -->
-    <nav class="">
+    <nav class="mx-4 md:mx-0">
       <div class="flex justify-between items-center">
         <div class="flex items-center">
           <img src="./src/images/icon-menu.svg" alt="" class="w-6 md:hidden" id="menu-btn">
@@ -28,7 +28,10 @@
         <div class="flex space-x-3 items-center">
           <div class="relative">
             <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
+            
             <span class="absolute -top-2 -right-2 bg-primary text-white rounded-full text-xs font-semibold px-1">0</span>
+            
+           
           </div>
           <img src="./src/images/image-avatar.png" alt="" class="h-8 w-8 hover:border hover:border-primary hover:rounded-full">
         </div>
@@ -36,7 +39,7 @@
       
 
       <!-- mobile menu -->
-      <div class="hidden flex absolute top-0 left-0 flex-col space-y-12 bg-white p-6 w-[60%] h-screen opacity-100" id="mobile-menu">
+      <div class="hidden absolute top-0 left-0 flex-col space-y-12 bg-white p-6 w-[60%] h-screen opacity-100" id="mobile-menu">
         <img src="./src/images/icon-close.svg" alt="" class="w-6 h-6" id="menu-close">
         <div class="flex flex-col space-y-4">
           <a href="" class="font-bold text-xl hover:text-primary">Collections</a>
@@ -47,16 +50,34 @@
         </div>
       </div>
     </nav>
-    <div class="pt-4"></div>
-    <hr class="border border-gray-300">
+    <div class="md:pt-4"></div>
+    <hr class="hidden md:block border border-gray-300">
     <!-- navbar -->
 
+    <div class="absolute top-20 right-12 md:right-12  bg-white rounded-2xl mx-auto shadow-xl shadow-black/50">
+      <h3 class="font-bold text-lg pb-2 p-6">Cart</h3>
+      <hr class="border border-gray-300">
+      <div class="p-6">
+        <div class="flex items-center justify-center pt-4 space-x-5 p-6">
+          <img src="./src/images/image-product-1.jpg" alt="" class="rounded-lg w-12 h-12">
+          <div class="flex flex-col">
+            <h2>Fall Limited Edition Sneakers</h2>
+            <p class="text-gray-500">$125.00 x 3 <span class="font-bold text-black">$375</span> </p>
+          </div>
+          <img src="./src/images/icon-delete.svg" alt="">
+        </div>
+        <button class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md ">
+          <span class="text-white">Checkout</span>
+        </button>
+      </div>
+    </div>
     <!-- main content -->
-    <main class="md:px-6 pt-6">
+    <main class="md:px-6 pt-3">
+      
       <div class="flex items-center flex-col md:flex-row md:space-x-8 lg:space-x-24">
         <div class="flex md:flex-col md:w-1/2">
           <a href="./src/images/image-product-1.jpg" class="glightbox3" data-gallery="gallery1">
-            <img src="./src/images/image-product-1.jpg" alt="" class="rounded-lg">
+            <img src="./src/images/image-product-1.jpg" alt="" class="md:rounded-lg w-full">
           </a>
           
           <div class="hidden md:flex justify-between space-x-2 pt-4 overflow-hidden">
@@ -74,7 +95,7 @@
             </a>
           </div>
         </div>
-        <div class="mt-4 md:mt-0 md:flex-1">
+        <div class="mt-4 md:mt-0 md:flex-1 mx-4">
           <h1 class="uppercase text-sm text-primary font-semibold">Sneaker company</h1>
           <h2 class="font-bold text-lg">Fall Limited Edition Sneakers</h2>
           <p class="text-gray-500 text-sm pt-4">These low-profile sneakers are your perfect casual wear companion. Featuring a 
@@ -92,9 +113,9 @@
 
             <div class="flex flex-col md:flex-row md:space-x-2 pt-6 space-y-4 md:space-y-0">
               <div class="flex justify-between rounded-md bg-[#F7F8FD]">
-                <button class="text-primary font-bold px-2 py-1 rounded-l-md">-</button>
-                <input type="number" class="bg-[#F7F8FD] w-12 text-center  focus:outline-none focus:border-[#F7F8FD] focus:ring-1 focus:ring-[#F7F8FD]" value="0">
-                <button class="text-primary font-bold px-2 py-1 rounded-r-md">+</button>
+                <button class="text-primary font-bold px-2 py-1 rounded-l-md" id="plusBtn">-</button>
+                <input type="number" class="bg-[#F7F8FD] w-12 text-center  focus:outline-none focus:border-[#F7F8FD] focus:ring-1 focus:ring-[#F7F8FD]" value="1" min="1">
+                <button class="text-primary font-bold px-2 py-1 rounded-r-md" id="minusBtn">+</button>
               </div>
               <button class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md shadow-primary/50 shadow-lg">
                 <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
