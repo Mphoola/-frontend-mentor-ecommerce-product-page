@@ -6,8 +6,13 @@
     <link href="./dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
-    <title>Ecommerce Home Page | Promise Mphoola</title>
+    <title>Ecommerce Home Page solution by Promise Mphoola</title>
     <meta name="description" content="Promise Mphoola, Software developer, web development, Android developer, Malawi">  
+    <style>
+      .imageSlides {
+        display: none
+      }
+    </style>
   </head>
   <body class="md:mx-12 mt-6 mb-6 ">
     <!-- navbar -->
@@ -19,14 +24,14 @@
           <img src="./src/images/logo.svg" alt="" class="pl-4 md:pr-12">
   
           <div class="hidden md:flex space-x-4">
-            <a href="" class="text-sm text-gray-500">Collections</a>
-            <a href="" class="text-sm text-gray-500">Men</a>
-            <a href="" class="text-sm text-gray-500">Women</a>
-            <a href="" class="text-sm text-gray-500">About</a>
-            <a href="" class="text-sm text-gray-500">Contact</a>
+            <a href="" class="text-sm text-gray-500 hover:text-black hover:underline hover:underline-offset-[23px] hover:decoration-primary hover:decoration-2">Collections</a>
+            <a href="" class="text-sm text-gray-500 hover:text-black hover:underline hover:underline-offset-[23px] hover:decoration-primary hover:decoration-2">Men</a>
+            <a href="" class="text-sm text-gray-500 hover:text-black hover:underline hover:underline-offset-[23px] hover:decoration-primary hover:decoration-2">Women</a>
+            <a href="" class="text-sm text-gray-500 hover:text-black hover:underline hover:underline-offset-[23px] hover:decoration-primary hover:decoration-2">About</a>
+            <a href="" class="text-sm text-gray-500 hover:text-black hover:underline hover:underline-offset-[23px] hover:decoration-primary hover:decoration-2">Contact</a>
           </div>
         </div>
-        <div class="flex space-x-3 items-center">
+        <div class="flex space-x-6 items-center">
           <div class="relative cursor-pointer" id="cart">
             <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
             
@@ -86,7 +91,38 @@
       
       <div class="flex items-center flex-col md:flex-row md:space-x-8 lg:space-x-24">
         <div class="flex md:flex-col md:w-1/2">
-          <a href="./src/images/image-product-1.jpg" class="glightbox3" data-gallery="gallery1">
+
+          <div class="relative md:hidden">
+            <a onclick="nextSlide(-1)" class="absolute cursor-pointer rounded-full p-1 bg-white left-4 top-52">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </a>
+            <a onclick="nextSlide(1)" class="absolute cursor-pointer rounded-full p-1 bg-white right-4 top-52">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>             
+            </a>
+
+            <div class="images-slideshow">
+              <div class="imageSlides  fade">
+                <img src="./src/images/image-product-1.jpg" alt="" class=" w-full">
+              </div>
+              <div class="imageSlides  fade">
+                <img src="./src/images/image-product-2.jpg" alt="" class=" w-full">
+              </div>
+              <div class="imageSlides  fade">
+                <img src="./src/images/image-product-3.jpg" alt="" class=" w-full">
+              </div>
+              <div class="imageSlides  fade">
+                <img src="./src/images/image-product-4.jpg" alt="" class=" w-full">
+              </div>
+              
+            </div>
+            <!-- <img src="./src/images/image-product-1.jpg" alt="" class="md:rounded-lg w-full" id="imgPlacehoder"> -->
+          </div>
+
+          <a href="./src/images/image-product-1.jpg" class="glightbox3 hidden md:block" data-gallery="gallery1">
             <img src="./src/images/image-product-1.jpg" alt="" class="md:rounded-lg w-full">
           </a>
           
@@ -127,7 +163,7 @@
                 <input type="number" class="bg-[#F7F8FD] w-12 text-center  focus:outline-none focus:border-[#F7F8FD] focus:ring-1 focus:ring-[#F7F8FD]" value="1" min="1">
                 <button class="text-primary font-bold px-2 py-1 rounded-r-md" id="minusBtn">+</button>
               </div>
-              <button id="addToCart" class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md shadow-primary/50 shadow-lg">
+              <button id="addToCart" class="flex space-x-2 bg-primary hover:bg-[#E8C28F] py-2 w-full items-center justify-center rounded-md shadow-primary/50 shadow-lg">
                 <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
                 <span class="text-white">Add to cart</span>
               </button>
@@ -224,6 +260,26 @@
         toggleCartDisplay.classList.remove('flex');
         emputyCart.classList.remove('hidden');
       });
+
+         
+      var currentIndex = 1;
+      displaySlides(currentIndex);
+
+      function nextSlide(num) {
+        displaySlides(currentIndex += num);
+      }
+
+      function displaySlides(num) {
+          var x;
+          var slides = document.getElementsByClassName("imageSlides");
+          if (num > slides.length) { currentIndex = 1 }
+          if (num < 1) { currentIndex = slides.length }
+          for (x = 0; x < slides.length; x++) {
+              slides[x].style.display = "none";
+          }
+          slides[currentIndex - 1].style.display = "block";
+      }
+      
 
     </script>
   </body>

@@ -657,6 +657,26 @@ video {
   right: 3rem;
 }
 
+.top-8 {
+  top: 2rem;
+}
+
+.top-24 {
+  top: 6rem;
+}
+
+.right-2 {
+  right: 0.5rem;
+}
+
+.top-52 {
+  top: 13rem;
+}
+
+.left-4 {
+  left: 1rem;
+}
+
 .m-6 {
   margin: 1.5rem;
 }
@@ -704,6 +724,10 @@ video {
 
 .mt-3 {
   margin-top: 0.75rem;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -877,6 +901,12 @@ video {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -991,6 +1021,14 @@ video {
 
 .p-20 {
   padding: 5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .px-1 {
@@ -1212,9 +1250,64 @@ video {
   border-color: rgb(218 110 46 / var(--tw-border-opacity));
 }
 
+.hover\:bg-purple-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 245 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 110 46 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#e8c671\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 198 113 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#E8C28F\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 194 143 / var(--tw-bg-opacity));
+}
+
 .hover\:text-primary:hover {
   --tw-text-opacity: 1;
   color: rgb(218 110 46 / var(--tw-text-opacity));
+}
+
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.hover\:underline:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.hover\:decoration-primary:hover {
+  -webkit-text-decoration-color: #DA6E2E;
+          text-decoration-color: #DA6E2E;
+}
+
+.hover\:decoration-2:hover {
+  text-decoration-thickness: 2px;
+}
+
+.hover\:underline-offset-8:hover {
+  text-underline-offset: 8px;
+}
+
+.hover\:underline-offset-\[12px\]:hover {
+  text-underline-offset: 12px;
+}
+
+.hover\:underline-offset-\[22px\]:hover {
+  text-underline-offset: 22px;
+}
+
+.hover\:underline-offset-\[23px\]:hover {
+  text-underline-offset: 23px;
 }
 
 .focus\:border:focus {
