@@ -57,19 +57,27 @@
     <div id="cart-content" class="hidden absolute top-20 right-12 md:right-12  bg-white rounded-2xl mx-auto shadow-xl shadow-black/50">
       <h3 class="font-bold text-lg pb-2 p-6">Cart</h3>
       <hr class="border border-gray-300">
-      <div class="p-6 flex flex-col space-y-4">
+
+      <div class="p-6 hidden flex-col space-y-4" id="toggleCartDisplay">
         <div class="flex items-center justify-center space-x-5 ">
           <img src="./src/images/image-product-1.jpg" alt="" class="rounded-lg w-12 h-12">
           <div class="flex flex-col">
             <h2>Fall Limited Edition Sneakers</h2>
-            <p class="text-gray-500">$125.00 x 3 <span class="font-bold text-black">$375</span> </p>
+            <div class="flex">
+              <span class="text-gray-500" id="cartQy">$125.00 x 3 </span> 
+              <span class="font-bold text-black px-3" id="cartTotal">$375</span>
+            </div>
           </div>
-          <img src="./src/images/icon-delete.svg" alt="">
+          <img src="./src/images/icon-delete.svg" alt="" id="removeItem" class="cursor-pointer">
         </div>
         
         <button class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md ">
           <span class="text-white">Checkout</span>
         </button>
+      </div>
+
+      <div class="p-20" id="emputy-cart">
+        <h3 class="font-bold text-lg ">Your cart is empty</h3>
       </div>
     </div>
     <!-- main content -->
@@ -124,9 +132,6 @@
               </button>
             </div>
         </div>
-
-        
-        
       </div>
     </main>
 
@@ -176,6 +181,11 @@
       const addToCart = document.getElementById('addToCart');
       const cartCount = document.getElementById('cart-count');
       const input = document.querySelector('input');
+      const cartQy = document.getElementById('cartQy');
+      const toggleCartDisplay = document.getElementById('toggleCartDisplay');
+      const cartTotal = document.getElementById('cartTotal');
+      const emputyCart = document.getElementById('emputy-cart');
+      const removeItem = document.getElementById('removeItem');
 
       plusBtn.addEventListener('click', () => {
         if (input.value > 1) {
@@ -188,10 +198,26 @@
       });
 
       addToCart.addEventListener('click', () => {
+        
         cartCount.innerHTML = parseInt(cartCount.innerHTML) + parseInt(input.value);
+
+        cartQy.innerHTML =  '$125.00 * ' + cartCount.innerHTML;
+
+        cartTotal.innerHTML = '$' + cartCount.innerHTML * 125 + '.00';
+
+        if (cartCount.innerHTML > 0) {
+          toggleCartDisplay.classList.remove('hidden');
+          toggleCartDisplay.classList.add('flex');
+          emputyCart.classList.add('hidden');
+        }
       });
 
-
+      removeItem.addEventListener('click', () => {
+        cartCount.innerHTML = 0;
+        toggleCartDisplay.classList.add('hidden');
+        toggleCartDisplay.classList.remove('flex');
+        emputyCart.classList.remove('hidden');
+      });
 
     </script>
   </body>
