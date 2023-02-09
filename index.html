@@ -26,12 +26,11 @@
           </div>
         </div>
         <div class="flex space-x-3 items-center">
-          <div class="relative">
+          <div class="relative cursor-pointer" id="cart">
             <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
             
-            <span class="absolute -top-2 -right-2 bg-primary text-white rounded-full text-xs font-semibold px-1">0</span>
-            
-           
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-primary text-white rounded-full text-xs font-semibold px-1">0</span>
+          
           </div>
           <img src="./src/images/image-avatar.png" alt="" class="h-8 w-8 hover:border hover:border-primary hover:rounded-full">
         </div>
@@ -54,11 +53,12 @@
     <hr class="hidden md:block border border-gray-300">
     <!-- navbar -->
 
-    <div class="absolute top-20 right-12 md:right-12  bg-white rounded-2xl mx-auto shadow-xl shadow-black/50">
+    <!-- cart -->
+    <div id="cart-content" class="hidden absolute top-20 right-12 md:right-12  bg-white rounded-2xl mx-auto shadow-xl shadow-black/50">
       <h3 class="font-bold text-lg pb-2 p-6">Cart</h3>
       <hr class="border border-gray-300">
-      <div class="p-6">
-        <div class="flex items-center justify-center pt-4 space-x-5 p-6">
+      <div class="p-6 flex flex-col space-y-4">
+        <div class="flex items-center justify-center space-x-5 ">
           <img src="./src/images/image-product-1.jpg" alt="" class="rounded-lg w-12 h-12">
           <div class="flex flex-col">
             <h2>Fall Limited Edition Sneakers</h2>
@@ -66,6 +66,7 @@
           </div>
           <img src="./src/images/icon-delete.svg" alt="">
         </div>
+        
         <button class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md ">
           <span class="text-white">Checkout</span>
         </button>
@@ -117,7 +118,7 @@
                 <input type="number" class="bg-[#F7F8FD] w-12 text-center  focus:outline-none focus:border-[#F7F8FD] focus:ring-1 focus:ring-[#F7F8FD]" value="1" min="1">
                 <button class="text-primary font-bold px-2 py-1 rounded-r-md" id="minusBtn">+</button>
               </div>
-              <button class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md shadow-primary/50 shadow-lg">
+              <button id="addToCart" class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md shadow-primary/50 shadow-lg">
                 <img src="./src/images/icon-cart.svg" alt="" class="h-4 w-4">
                 <span class="text-white">Add to cart</span>
               </button>
@@ -131,6 +132,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
+      // lightbox
       const lightbox = GLightbox({
         selector: '.glightbox3',
         touchNavigation: true,
@@ -138,6 +140,11 @@
         autoplayVideos: true,
       });
 
+      // cart
+      const cart = document.getElementById('cart');
+      const cartContent = document.getElementById('cart-content');
+
+      // nav
       const menuBtn = document.getElementById('menu-btn');
       const menuClose = document.getElementById('menu-close');
       const mobileMenu = document.getElementById('mobile-menu');
@@ -147,12 +154,44 @@
         mobileMenu.classList.toggle('hidden');
         mobileMenu.classList.toggle('flex');
         body.classList.toggle('bg-black/20');
+        cartContent.classList.toggle('hidden');
+        
       });
 
       menuClose.addEventListener('click', () => {
+        cartContent.classList.toggle('hidden');
         mobileMenu.classList.toggle('hidden');
         body.classList.toggle('bg-black/20');
       });
+
+      //cart
+      cart.addEventListener('click', () => {
+        cartContent.classList.toggle('hidden');
+        mobileMenu.classList.add('hidden');
+      });
+
+      // add to cart function
+      const plusBtn = document.getElementById('plusBtn');
+      const minusBtn = document.getElementById('minusBtn');
+      const addToCart = document.getElementById('addToCart');
+      const cartCount = document.getElementById('cart-count');
+      const input = document.querySelector('input');
+
+      plusBtn.addEventListener('click', () => {
+        if (input.value > 1) {
+          input.value = parseInt(input.value) - 1;
+        }
+      });
+
+      minusBtn.addEventListener('click', () => {
+        input.value = parseInt(input.value) + 1;
+      });
+
+      addToCart.addEventListener('click', () => {
+        cartCount.innerHTML = parseInt(cartCount.innerHTML) + parseInt(input.value);
+      });
+
+
 
     </script>
   </body>
