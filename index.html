@@ -6,7 +6,8 @@
     <link href="./dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
-    <title>Ecommerce Home page</title>
+    <title>Ecommerce Home Page | Promise Mphoola</title>
+    <meta name="description" content="Promise Mphoola, Software developer, web development, Android developer, Malawi">  
   </head>
   <body class="md:mx-12 mt-6 mb-6 ">
     <!-- navbar -->
@@ -135,6 +136,11 @@
       </div>
     </main>
 
+    <div class="text-[11px] text-center pb-5 pt-12">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a target="_blank" class="text-blue-400 underline" href="https://promise.hackbits.tech/">Promise Mphoola</a>.
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
       // lightbox
@@ -159,12 +165,12 @@
         mobileMenu.classList.toggle('hidden');
         mobileMenu.classList.toggle('flex');
         body.classList.toggle('bg-black/20');
-        cartContent.classList.toggle('hidden');
+        cartContent.classList.add('hidden');
         
       });
 
       menuClose.addEventListener('click', () => {
-        cartContent.classList.toggle('hidden');
+        cartContent.classList.add('hidden');
         mobileMenu.classList.toggle('hidden');
         body.classList.toggle('bg-black/20');
       });
