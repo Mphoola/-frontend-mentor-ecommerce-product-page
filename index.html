@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
     <title>Ecommerce Home page</title>
   </head>
   <body class="mx-4 md:mx-12 mt-6">
@@ -34,14 +36,26 @@
 
     <!-- main content -->
     <main class="px-6 pt-6">
-      <div class="flex items-center flex-col md:flex-row space-x-24">
+      <div class="flex items-center flex-col md:flex-row md:space-x-8 lg:space-x-24">
         <div class="flex md:flex-col md:w-1/2">
-          <img src="./src/images/image-product-1.jpg" alt="" class="rounded-lg">
+          <a href="./src/images/image-product-1.jpg" class="glightbox3" data-gallery="gallery1">
+            <img src="./src/images/image-product-1.jpg" alt="" class="rounded-lg">
+          </a>
+          
           <div class="flex justify-between space-x-2 pt-4 overflow-hidden">
-            <img src="./src/images/image-product-1-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16 border border-[#DA6E2E] bg-white/50">
-            <img src="./src/images/image-product-2-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16">
-            <img src="./src/images/image-product-3-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16">
-            <img src="./src/images/image-product-4-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16">
+            <a href="./src/images/image-product-1.jpg" class="glightbox3" data-gallery="gallery1">
+              <img src="./src/images/image-product-1-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16 border border-[#DA6E2E] bg-white/50">
+            </a>
+            <a href="./src/images/image-product-2.jpg" class="glightbox3" data-gallery="gallery1">
+              <img src="./src/images/image-product-2-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16">
+            </a>
+            <a href="./src/images/image-product-3.jpg" class="glightbox3" data-gallery="gallery1">
+              <img src="./src/images/image-product-3-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16">
+            </a>
+            <a href="./src/images/image-product-4.jpg" class="glightbox3" data-gallery="gallery1">
+              <img src="./src/images/image-product-4-thumbnail.jpg" alt="" class="rounded-lg w-16 h-16">
+            </a>
+            
           </div>
         </div>
         <div class="md:flex-1">
@@ -61,7 +75,7 @@
             <div class="flex space-x-2 pt-6">
               <div class="flex justify-between rounded-md bg-[#F7F8FD]">
                 <button class="text-primary font-bold px-2 py-1 rounded-l-md">-</button>
-                <input type="text" class="bg-[#F7F8FD] w-12 text-center" value="0">
+                <input type="text" class="bg-[#F7F8FD] w-12 text-center  focus:outline-none focus:border-[#F7F8FD] focus:ring-1 focus:ring-[#F7F8FD]" value="0">
                 <button class="text-primary font-bold px-2 py-1 rounded-r-md">+</button>
               </div>
               <button class="flex space-x-2 bg-primary py-2 w-full items-center justify-center rounded-md shadow-primary/50 shadow-lg">
@@ -75,5 +89,19 @@
         
       </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      const lightbox = GLightbox({
+        selector: '.glightbox3',
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true,
+        onOpen: () => {
+          console.log('Lightbox opened')
+        },
+      });
+
+    </script>
   </body>
 </html>
