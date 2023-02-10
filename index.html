@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -98,7 +98,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
               </svg>
             </a>
-            <a onclick="nextSlide(1)" id="navs" class="absolute cursor-pointer rounded-full p-1 bg-white right-4 top-64">
+            <a onclick="nextSlide(1)" id="navs2" class="absolute cursor-pointer rounded-full p-1 bg-white right-4 top-64">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>             
@@ -257,7 +257,7 @@
       });
 
       removeItem.addEventListener('click', () => {
-        cartCount.innerHTML = 0;
+        cartCount.innerHTML = "";
         toggleCartDisplay.classList.add('hidden');
         toggleCartDisplay.classList.remove('flex');
         emputyCart.classList.remove('hidden');
